@@ -6,6 +6,9 @@
 # dotenv files
 .env
 
+# Advent of code input files
+[Ii]nput.*
+
 # User-specific files
 *.rsuser
 *.suo

@@ -14,4 +14,16 @@
         <PackageReference Include="NUnit.Analyzers" Version="3.6.1"/>
         <PackageReference Include="coverlet.collector" Version="6.0.0"/>
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\AdventOfCode2023\AdventOfCode2023.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="Day01\Resources\Input.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="Day01\Resources\TestInput.txt" />
+      <EmbeddedResource Include="Day01\Resources\TestInput.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
 </Project>
