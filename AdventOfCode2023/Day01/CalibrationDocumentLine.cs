@@ -6,19 +6,9 @@ public class CalibrationDocumentLine(string line)
 {
     private readonly string _line = line.ParseDigits();
 
-    private int FirstDigit()
-    {
-        return _line.GetFirstCharacter().ToInt();
-    }
-
-    private int LastDigit()
-    {
-        return _line.GetLastCharacter().ToInt();
-    }
-
     public int ConcatenatedFirstAndLastDigit()
     {
-        var firstAndLastDigits = $"{FirstDigit()}{LastDigit()}";
+        var firstAndLastDigits = $"{_line.GetFirstCharacter()}{_line.GetLastCharacter()}";
         return firstAndLastDigits.ToInt();
     }
 }
