@@ -1,5 +1,6 @@
 using AdventOfCode2023.Utilities;
 using System;
+using AdventOfCode2023.Utilities.Extensions;
 
 namespace AdventOfCode2023.Day01;
 
@@ -9,21 +10,19 @@ public class CalibrationDocumentProcessor(string path)
 
     public int CalculateTotalCalibrationValue()
     {
-        int total = 0;
+        var total = 0;
 
-        foreach (var calibrationNumber in _calibrationDocument)
+        foreach (var calibrationDocumentLine in _calibrationDocument)
         {
-            string numbers = string.Concat(calibrationNumber.Where(char.IsDigit));
+            var numbers = calibrationDocumentLine.ParseDigits();
+            
+            var firstDigit = numbers.Substring(0, 1);
+            var lastDigit = numbers.Substring(numbers.Length - 1, 1);
+            
+            var finalNumbers = $"{firstDigit}{lastDigit}";
+            var parsedNumbers = finalNumbers.ToInt();
 
-            string firstDigit = numbers.Substring(0, 1);
-            string lastDigit = numbers.Substring(numbers.Length - 1);
- 
-            string finalNumbers = firstDigit + lastDigit;
-
-            int parsedNumbers = int.Parse(finalNumbers);
-
-            total = total + parsedNumbers;
-
+            total += parsedNumbers;
         }
 
         return total;

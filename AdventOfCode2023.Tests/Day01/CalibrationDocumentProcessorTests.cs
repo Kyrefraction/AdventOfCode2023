@@ -6,10 +6,8 @@ namespace AdventOfCode2023.Tests.Day01;
 public class CalibrationDocumentProcessorTests
 {
     private const string TestInput = "Day01/Resources/TestInput.txt";
-
     private const string LiveInput = "Day01/Resources/Input.txt";
-
-
+    
     private CalibrationDocumentProcessor _calibrationDocumentProcessor = null!;
     
     [OneTimeSetUp]
@@ -22,6 +20,6 @@ public class CalibrationDocumentProcessorTests
     public void CalculateTotalCalibrationValue()
     {
         var result = _calibrationDocumentProcessor.CalculateTotalCalibrationValue();
-        Assert.That(result, Is.EqualTo(55172));
+        Assert.That(result, Is.EqualTo(55090));
     }
 }
