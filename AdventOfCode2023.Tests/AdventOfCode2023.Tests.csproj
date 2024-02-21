@@ -18,7 +18,9 @@
       <ProjectReference Include="..\AdventOfCode2023\AdventOfCode2023.csproj" />
     </ItemGroup>
     <ItemGroup>
-      <None Remove="Day01\Resources\TestInput.txt" />
+		<EmbeddedResource Include="Day01\Resources\Input.txt">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</EmbeddedResource>
       <EmbeddedResource Include="Day01\Resources\TestInput.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
