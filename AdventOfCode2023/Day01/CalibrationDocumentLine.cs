@@ -8,17 +8,17 @@ public class CalibrationDocumentLine(string line)
 
     private int FirstDigit()
     {
-        return _line[..1].ToInt();
+        return _line.GetFirstCharacter().ToInt();
     }
 
     private int LastDigit()
     {
-        return _line.Substring(_line.Length - 1, 1).ToInt();
+        return _line.GetLastCharacter().ToInt();
     }
 
     public int ConcatenatedFirstAndLastDigit()
     {
-        var finalNumbers = $"{FirstDigit()}{LastDigit()}";
-        return finalNumbers.ToInt();
+        var firstAndLastDigits = $"{FirstDigit()}{LastDigit()}";
+        return firstAndLastDigits.ToInt();
     }
 }
