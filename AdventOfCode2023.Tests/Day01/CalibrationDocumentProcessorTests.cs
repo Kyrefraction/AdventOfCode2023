@@ -1,4 +1,6 @@
 using AdventOfCode2023.Day01;
+using AdventOfCode2023.Utilities;
+using AdventOfCode2023.Utilities.Extensions;
 
 namespace AdventOfCode2023.Tests.Day01;
 
@@ -9,6 +11,7 @@ public class CalibrationDocumentProcessorTests
     private const string LiveInput = "Day01/Resources/Input.txt";
     
     private CalibrationDocumentProcessor _calibrationDocumentProcessor = null!;
+    private readonly int _partOneAnswer = FileReader.ExtractInput("Day01/Resources/PartOneAnswer.txt").ToInt();
     
     [OneTimeSetUp]
     public void OneTimeSetUp()
@@ -20,6 +23,6 @@ public class CalibrationDocumentProcessorTests
     public void CalculateTotalCalibrationValue()
     {
         var result = _calibrationDocumentProcessor.CalculateTotalCalibrationValue();
-        Assert.That(result, Is.EqualTo(55090));
+        Assert.That(result, Is.EqualTo(_partOneAnswer));
     }
 }

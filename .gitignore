@@ -8,6 +8,7 @@
 
 # Advent of code input files
 [Ii]nput.*
+[Pp]artOneAnswer.*
 
 # User-specific files
 *.rsuser
