@@ -7,9 +7,9 @@
 .env
 
 # Advent of code input files
-[Ii]nput.*
-[Pp]artOneAnswer.*
-[Pp]artTwoAnswer.*
+[Ll]ive.*
+[Pp]artOne.*
+[Pp]artTwo.*
 
 # User-specific files
 *.rsuser

@@ -18,26 +18,29 @@
       <ProjectReference Include="..\AdventOfCode2023\AdventOfCode2023.csproj" />
     </ItemGroup>
     <ItemGroup>
-		<EmbeddedResource Include="Day01\Resources\Input.txt">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</EmbeddedResource>
-      <EmbeddedResource Include="Day01\Resources\TestInput.txt">
+      <EmbeddedResource Include="Day01\Resources\Answers\PartOne.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
-      <EmbeddedResource Include="Day01\Resources\PartOneAnswer.txt">
+      <EmbeddedResource Include="Day01\Resources\Answers\PartTwo.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Day01\Resources\Answers\TestPartOne.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Day01\Resources\Answers\TestPartTwo.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Day01\Resources\Inputs\Live.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Day01\Resources\Inputs\TestPartTwo.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Day01\Resources\Inputs\TestPartOne.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <None Remove="Day01\Resources\TestInputAnswer.txt" />
-      <EmbeddedResource Include="Day01\Resources\TestInputAnswer.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </EmbeddedResource>
       <None Remove="Day01\Resources\TestInputPartTwo.txt" />
-      <EmbeddedResource Include="Day01\Resources\TestInputPartTwo.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </EmbeddedResource>
       <None Remove="Day01\Resources\TestInputPartTwoAnswer.txt" />
-      <EmbeddedResource Include="Day01\Resources\TestInputPartTwoAnswer.txt">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </EmbeddedResource>
     </ItemGroup>
 </Project>

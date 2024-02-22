@@ -1,4 +1,5 @@
 using AdventOfCode2023.Utilities;
+using AdventOfCode2023.Utilities.Extensions;
 
 namespace AdventOfCode2023.Day01;
 
@@ -8,16 +9,15 @@ public class CalibrationDocumentProcessor(string path)
 
     public int CalculateTotalIntegerOnlyCalibrationValue()
     {
-        var calibrationDocumentLines = _calibrationDocument.Select(line => new CalibrationDocumentLine(line));
-        return calibrationDocumentLines.Sum(line => line.ConcatenatedFirstAndLastDigit());
+        return _calibrationDocument
+            .Select(line => line.ParseDigits())
+            .Sum(line => $"{line.GetFirstCharacter()}{line.GetLastCharacter()}".ToInt());
     }
 
     public int CalculateTotalCalibrationValue()
     {
-        // one, two, three, four, five, six, seven, eight, and nine also count as valid "digits".
-        // "also" meaning not just only these written out numbers should be parsed, but the integer values themselves still
-        
-        // implementation goes here
-        return 0;
+        return _calibrationDocument.Select(CalibrationDocumentLineParser.Parse)
+            .Select(parsedLine => $"{parsedLine.GetFirstCharacter()}{parsedLine.GetLastCharacter()}".ToInt())
+            .Sum();
     }
 }
