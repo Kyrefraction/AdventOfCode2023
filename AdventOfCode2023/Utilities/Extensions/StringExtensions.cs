@@ -2,6 +2,11 @@ namespace AdventOfCode2023.Utilities.Extensions;
 
 public static class StringExtensions
 {
+    public static string SafeSubstring(this string value, int startIndex, int length)
+    {
+        return startIndex + length <= value.Length ? value.Substring(startIndex, length) : value[startIndex..];
+    }
+    
     public static string GetFirstCharacter(this string value)
     {
         return value[..1];

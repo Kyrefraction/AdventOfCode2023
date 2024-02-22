@@ -1,35 +1,37 @@
+using AdventOfCode2023.Utilities.Extensions;
+
 namespace AdventOfCode2023.Day01;
 
 public static class CalibrationDocumentLineParser
 {
-    private static readonly Dictionary<string, int> Numbers = new()
+    private static readonly Dictionary<string, char> Numbers = new()
     {
         {
-            "one", 1
+            "one", '1'
         },
         {
-            "two", 2
+            "two", '2'
         },
         {
-            "three", 3
+            "three", '3'
         },
         {
-            "four", 4
+            "four", '4'
         },
         {
-            "five", 5
+            "five", '5'
         },
         {
-            "six", 6
+            "six", '6'
         },
         {
-            "seven", 7
+            "seven", '7'
         },
         {
-            "eight", 8
+            "eight", '8'
         },
         {
-            "nine", 9
+            "nine", '9'
         }
     };
 
@@ -38,26 +40,22 @@ public static class CalibrationDocumentLineParser
         var parsedLine = "";
         for (var index = 0; index < line.Length; index++)
         {
-            var singleCharacter = line.Substring(index, 1);
-            if (char.IsDigit(singleCharacter.ToCharArray().First()))
+            if (char.IsDigit(line[index]))
             {
-                parsedLine += singleCharacter;
+                parsedLine += line[index];
             }
             else
             {
                 foreach (var number in Numbers)
                 {
-                    var remainingLineLength = line.Length - index;
-                    var numberLength = number.Key.Length;
-            
-                    if (line.Substring(index, remainingLineLength < numberLength ? remainingLineLength : numberLength) == number.Key)
+                    if (number.Key == line.SafeSubstring(index, number.Key.Length))
                     {
                         parsedLine += number.Value;
-                    }    
-                }   
+                    }
+                }    
             }
         }
-
+        
         return parsedLine;
     }
 }
